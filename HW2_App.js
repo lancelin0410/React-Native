@@ -37,7 +37,7 @@ export default function App() {
   }
 
   const changeColors = () => {
-    var colorsList = ['#FCFCFC', '#ADFEDC', '#BBFFFF', '#FFBD9D', '#FFFFA']
+    var colorsList = ['#FCFCFC', '#ADFEDC', '#BBFFFF', '#FFBD9D', '#FFFFAA']
     var i = Math.floor(Math.random() * 5)
     while (colorsList[i] == colors){
       i = Math.floor(Math.random() * 5)
