@@ -38,9 +38,9 @@ export default function App() {
 
   const changeColors = () => {
     var colorsList = ['#FCFCFC', '#ADFEDC', '#BBFFFF', '#FFBD9D', '#FFFFA']
-    var i = Math.floor(Math.random() * 6)
+    var i = Math.floor(Math.random() * 5)
     while (colorsList[i] == colors){
-      i = Math.floor(Math.random() * 6)
+      i = Math.floor(Math.random() * 5)
     }
     setColors(colorsList[i])
   }
