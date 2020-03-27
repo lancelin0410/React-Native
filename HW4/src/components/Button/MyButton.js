@@ -26,7 +26,7 @@ const MyButton = props => {
 
 export default MyButton
 
-MyButton.PropTypes={
+MyButton.propTypes={
     myTitle: PropTypes.string.isRequired,
     myOnPress: PropTypes.func,
     backgroundColor: PropTypes.string,
@@ -36,5 +36,6 @@ MyButton.PropTypes={
 
 MyButton.defaultProps={
     myTitle: 'Click',
-    fontSize: 22
+    fontSize: 22,
+    color: 'black'
 }

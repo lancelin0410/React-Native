@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import MyButton from './src/components/Button/MyButton.js'
-import { setPlaneDetection } from 'expo/build/AR';
+
+// var i = 0
 
 export default function App() {
 
@@ -13,6 +14,10 @@ export default function App() {
     setColor('white')
     setText('讀取中')
     var i = Math.floor(Math.random()*29+1)
+    // i+=1
+    // if(i==31){
+    //   i = 1
+    // }
     setBackGround('https://x8a7r9m5.stackpathcdn.com/wp-content/uploads/2017/09/'+i+'-daily-dose-nobel-peace-prize-winners-quotes.jpg')
     console.log(i)
   }
