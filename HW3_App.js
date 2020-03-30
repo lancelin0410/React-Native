@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, Image} from 'react-native';
 
 var timer = null
@@ -13,8 +13,7 @@ export default function App()  {
   const [image, setImage] = useState()
   const [result, setResult] = useState()
 
-  const getCode = () => {
-    clearInterval(timer)
+  useEffect(()=>{
     timer = setInterval(() => {
       setTime(time => time-1)
       if (time == '0'){
@@ -23,7 +22,11 @@ export default function App()  {
         setCode(num.slice(-4))
       }
     }, 1000)
-  }
+
+    return (()=>{
+      clearInterval(timer)
+    })
+  }, [])
 
   const enterButton = () => {
     Keyboard.dismiss()
@@ -40,8 +43,6 @@ export default function App()  {
       setResult(<Text style={{fontSize:25, color:'red'}}>輸入錯誤</Text>)
     }
   }
-
-  getCode()
 
   return (
     <View style = {styles.container}>
@@ -63,7 +64,17 @@ export default function App()  {
         autoFocus={true}
         onSubmitEditing={() => enterButton() }
       />
-          
+
+      {/* {getNumber()} */}
+
+      {/* {validCode === '1234' ? <Text style={{color:'yellow'}}>輸入正確</Text> : <Text style={{color:'red'}}>請輸入密碼</Text>} */}
+
+      {/* {validCode.length === 4 ? (
+        validCode === code ? 
+          <Text style={{color:'yellow'}}>輸入正確</Text> :
+          <Text style={{color:'red'}}>輸入錯誤</Text>
+       ) : <Text style={{color:'red'}}>請輸入密碼</Text>} */}
+
       <TouchableOpacity style={{backgroundColor:'#00aeef', borderRadius:20, width:200, height:40, justifyContent:'center', margin: 20}} 
         onPress = {() => enterButton()}
       >
