@@ -79,7 +79,7 @@ export default function DrinkDetailScreen(props) {
         </View>
       </View>
       <View>
-        <Text style={[styles.text, {fontSize:20, margin:20}]}>{text}</Text>
+        <Text style={[styles.text, {fontSize:20, margin:20, marginTop:0}]}>{text}</Text>
       </View>
     </View>
   );
