@@ -26,7 +26,7 @@ export default function App()  {
     return (()=>{
       clearInterval(timer)
     })
-  }, [])
+  }, [time])
 
   const enterButton = () => {
     Keyboard.dismiss()
