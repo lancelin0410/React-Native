@@ -8,6 +8,7 @@ export default function DrinkDetailScreen(props) {
   const [color, setColor] = useState(['',''])
   const [content, setContent] = useState(['',''])
   const [text, setText] = useState('')
+  const [display, setDisplay] = useState('flex')
 
   useEffect (()=>{
     // props.navigation.setOptions({
@@ -15,6 +16,7 @@ export default function DrinkDetailScreen(props) {
     // })
     if (title == '美式咖啡'){
       setFlex([2, 0])
+      setDisplay('none')
       setColor(['aqua', 'aqua'])
       setContent(['水', null])
       setText('濃縮咖啡加上大量熱水。\n比普通的濃縮咖啡柔和。也可加冰飲用，風味獨樹一幟。')
@@ -30,6 +32,7 @@ export default function DrinkDetailScreen(props) {
       setText('在偏濃的咖啡上，倒入以蒸汽發泡的牛奶，此時咖啡的顏色就像卡布奇諾教會修士深褐色外衣上覆的頭巾一樣。')
     } else if (title == '咖啡歐蕾'){
       setFlex([2, 0])
+      setDisplay('none')
       setColor(['snow', 'snow'])
       setContent(['牛奶', null])
       setText('在咖啡中混入大量的牛奶，法國人喜歡用碗盛裝，當成早餐，配著法國麵包食用。')
@@ -63,11 +66,11 @@ export default function DrinkDetailScreen(props) {
       </View>
       <View>
         <View style={{width:150, height:150, borderStyle:'solid', borderWidth:25, borderColor: 'white', borderRadius:75, position:'absolute', top:60, right:-10}}></View>
-        <View style={{width:200, height:210, borderStyle:'solid', borderWidth:5, borderTopWidth:0, borderColor: 'white', borderRadius:20, margin:30, overflow:'hidden', left:-15}}>
+        <View style={{width:200, height:210, borderStyle:'solid', borderWidth:8, borderTopWidth:0, borderColor: 'white', borderRadius:15, margin:30, overflow:'hidden', left:-15}}>
           <View style={{flex:flex[0], backgroundColor:color[0], alignItems: 'center', justifyContent: 'center'}}>
             <Text style={styles.text}>{content[0]}</Text>
           </View>
-          <View style={{flex:flex[1], backgroundColor:color[1], alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{flex:flex[1], backgroundColor:color[1], alignItems: 'center', justifyContent: 'center', display: display}}>
             <Text style={styles.text}>{content[1]}</Text>
           </View>
           <View style={{flex:1, backgroundColor:'maroon', alignItems: 'center', justifyContent: 'center'}}>
@@ -76,7 +79,7 @@ export default function DrinkDetailScreen(props) {
         </View>
       </View>
       <View>
-        <Text style={[styles.text, {fontSize:20, margin:15}]}>{text}</Text>
+        <Text style={[styles.text, {fontSize:20, margin:20}]}>{text}</Text>
       </View>
     </View>
   );
