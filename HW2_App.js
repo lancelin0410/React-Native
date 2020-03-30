@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 var timer
@@ -33,23 +33,30 @@ export default function App() {
   const stopButton = () => {
     clearInterval(timer)
     setTimes(0)
+    setActive(false)
     setbuttonText('Start')
   }
 
   const changeColors = () => {
-    var colorsList = ['#FCFCFC', '#ADFEDC', '#BBFFFF', '#FFBD9D', '#FFFFAA']
-    var i = Math.floor(Math.random() * 5)
+    var colorsList = ['white', '#FCFCFC', '#ADFEDC', '#BBFFFF', '#FFBD9D', '#FFFFAA']
+    var i  = Math.floor(Math.random() * 6)
     while (colorsList[i] == colors){
-      i = Math.floor(Math.random() * 5)
+      i = Math.floor(Math.random() * 6)
     }
     setColors(colorsList[i])
   }
 
   return (
     <View style={[styles.container, {backgroundColor: colors}]}>
-      <View style={{width:300, height:120, backgroundColor: '#0080FF', borderStyle: 'solid', borderWidth:5, borderColor: '#D9FFFF', borderRadius:20, margin:5}}>
-        <Text style={{fontSize:100, color:'white', textAlign:'center', lineHeight:120}}>
-          {mins.slice(-2)+':'+secs.slice(-2)}
+      <View style={{flexDirection:'row', width:300, height:120, backgroundColor: '#0080FF', borderStyle: 'solid', borderWidth:5, borderColor: '#D9FFFF', borderRadius:20, margin:5, justifyContent:'center', alignContent:'center'}}>
+        <Text style={{flex:2, fontSize:100, color:'white', textAlign:'center', lineHeight:120}}>
+          {mins.slice(-2)}
+        </Text>
+        <Text style={{flex:0.3, fontSize:100, color:'white', textAlign:'center', lineHeight:110}}>
+          :
+        </Text>
+        <Text style={{flex:2, fontSize:100, color:'white', textAlign:'center', lineHeight:120}}>
+          {secs.slice(-2)}
         </Text>
       </View>
       <View style={{width:250, flexDirection:'row', justifyContent:'space-between'}}>
