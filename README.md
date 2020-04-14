@@ -35,9 +35,10 @@ Calculator - Bouns
 
 ## HW6 - 自製data列表(含圖片)
   1. 一款小筆記的APP，存有些許技術問題
-  2. 嘗試用redux-persis  
+  2. 嘗試用redux-persis但有BUG，遂改用AsyncStorage (HW6-1)
+  3. 加入刪除按鈕，並有防呆視窗 :p  
   https://hahow.in/creations/5e8b54e4bf8c730022228043  
-  <img src="https://hahow.in/images/5e8b56e7bf8c730022228077" height="300px"/>
+  <img src="https://hahow.in/images/5e95ba18f6ae9b7313c1bdc2" height="300px"/>
 
 ## HW7 - 串接資料 API
   串接農村小旅行的簡單APP  
